@@ -8,5 +8,3 @@ const maze = new Maze(file.content());
 const chromosome = new Chromosome(maze.freeBlocks, 8);
 const ga = new GA(process.argv[3], maze.getMatrix(), maze.freeBlocks);
 ga.verifySolution();
-
-chromosome.move("0", maze.getMatrix());

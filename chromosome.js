@@ -5,6 +5,8 @@ class Chromosome {
     this.currentCord = [0, 0]; //row, col
     this.genes = this.generateChromosome();
     this.path = new Array();
+    this.countPathNoRepeat = 0;
+    this.fitness = 0;
   }
 
   randomBetween(min, max) {
@@ -36,8 +38,9 @@ class Chromosome {
   // 7 = noroeste
   movementNorth(currentCord, matrix) {
     if (currentCord[0] == 0) {
-      return -1;
+      return { value: -1 };
     }
+
     return {
       value: matrix[currentCord[0] - 1][[currentCord[1]]],
       coord: [currentCord[0] - 1, currentCord[1]],
@@ -46,7 +49,7 @@ class Chromosome {
 
   movementNortheast(currentCord, matrix) {
     if (currentCord[0] == 0 || currentCord[1] == matrix.length - 1) {
-      return -1;
+      return { value: -1 };
     }
     return {
       value: matrix[currentCord[0] - 1][[currentCord[1] + 1]],
@@ -56,8 +59,9 @@ class Chromosome {
 
   movementEast(currentCord, matrix) {
     if (currentCord[1] == matrix.length - 1) {
-      return -1;
+      return { value: -1 };
     }
+
     return {
       value: matrix[currentCord[0]][[currentCord[1] + 1]],
       coord: [currentCord[0], currentCord[1] + 1],
@@ -69,7 +73,7 @@ class Chromosome {
       currentCord[0] == matrix.length - 1 ||
       currentCord[1] == matrix.length - 1
     ) {
-      return -1;
+      return { value: -1 };
     }
 
     return {
@@ -80,7 +84,7 @@ class Chromosome {
 
   movementSouth(currentCord, matrix) {
     if (currentCord[0] == matrix.length - 1) {
-      return -1;
+      return { value: -1 };
     }
     return {
       value: matrix[currentCord[0] + 1][[currentCord[1]]],
@@ -89,7 +93,7 @@ class Chromosome {
   }
   movementSouthwest(currentCord, matrix) {
     if (currentCord[0] == matrix.length - 1 || currentCord[1] == 0) {
-      return -1;
+      return { value: -1 };
     }
     return {
       value: matrix[currentCord[0] + 1][[currentCord[1] - 1]],
@@ -98,7 +102,7 @@ class Chromosome {
   }
   movementWest(currentCord, matrix) {
     if (currentCord[1] == 0) {
-      return -1;
+      return { value: -1 };
     }
     return {
       value: matrix[currentCord[0]][[currentCord[1] - 1]],
@@ -108,7 +112,7 @@ class Chromosome {
 
   movementNorthWest(currentCord, matrix) {
     if (currentCord[0] == 0 || currentCord[1] == 0) {
-      return -1;
+      return { value: -1 };
     }
     return {
       value: matrix[currentCord[0] - 1][[currentCord[1] - 1]],
@@ -137,41 +141,66 @@ class Chromosome {
     }
   }
 
+  calcScore(moveValue) {
+    switch (moveValue) {
+      case "0":
+        return this.countPathNoRepeat * 2;
+      case "B":
+        return -1000;
+      case "1":
+        return -10;
+      case "E":
+        return -100;
+      case "S":
+        return 1000;
+      case -1:
+        return -10;
+      default:
+        console.log("moveValueError", moveValue);
+    }
+  }
+
   calculateWay(matrix) {
-    let lenghtMoves = 0;
+    let scoreMoves = 0;
     this.genes.forEach((gene) => {
-      if (lenghtMoves == "Caiu") {
-        return;
-      }
-      if (lenghtMoves == "Exit") {
+      const move = this.move(gene, matrix);
+      scoreMoves = scoreMoves + this.calcScore(move.value);
+
+      if (move.value == "S") {
+        scoreMoves += 1000;
+        this.fitness = scoreMoves;
         return;
       }
 
-      const move = this.move(gene, matrix);
-      // console.log("move ", move);
+      for (let i = 0; i < this.path.length; i++) {
+        if (
+          move.coord &&
+          this.path[i][0] == move.coord[0] &&
+          this.path[i][1] == move.coord[1]
+        ) {
+          this.countPathNoRepeat--;
+          scoreMoves += -100;
+          break;
+        }
+      }
+
       switch (move.value) {
         case "0":
           this.currentCord = move.coord;
           this.path.push(move.coord);
-          lenghtMoves++;
-          break;
-        case "B":
-          break;
-        case "1":
+          this.countPathNoRepeat++;
           break;
         case "E":
           this.currentCord = move.coord;
           this.path.push(move.coord);
-          lenghtMoves = 0;
+          this.countPathNoRepeat++;
           break;
-        case "S":
-          lenghtMoves = "Exit";
-          break;
-        case "-1":
+        default:
           break;
       }
     });
-    return lenghtMoves;
+    this.fitness = scoreMoves;
+    return scoreMoves;
   }
 }
 
