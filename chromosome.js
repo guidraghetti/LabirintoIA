@@ -148,7 +148,7 @@ class Chromosome {
       }
 
       const move = this.move(gene, matrix);
-      console.log("move ", move);
+      // console.log("move ", move);
       switch (move.value) {
         case "0":
           this.currentCord = move.coord;

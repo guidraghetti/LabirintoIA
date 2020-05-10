@@ -14,17 +14,15 @@ class Ga {
     for (let i = 0; i < this.lengthPopulation; i++) {
       listPopulation.push(new Chromosome(this.maxFreeBlocks, 7));
     }
-    console.log("Cromossomos: \n", listPopulation, "\n\n\n");
     return listPopulation;
   }
 
   calculateFitness() {
     let listFit = new Array();
     for (let i = 0; i < this.population.length; i++) {
-      console.log(`\n ----- Cromossomo  posição: ${i} ----- \n`);
       listFit.push(this.population[i].calculateWay(this.matrix));
     }
-    console.log("\n\n\nLista Final ", listFit);
+    console.log("\nLista Final:", listFit);
     return listFit;
   }
 
