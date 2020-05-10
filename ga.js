@@ -35,7 +35,6 @@ class Ga {
         if (fitness == "Exit") {
           console.log("Exit: ", this.population[index].getPath());
         }
-        console.log(fitness);
       });
     } else {
       console.log("todo resto");
