@@ -27,7 +27,7 @@ class Chromosome {
     return this.path;
   }
 
-  getExit(){
+  getExit() {
     return this.exit;
   }
 
@@ -177,36 +177,40 @@ class Chromosome {
 
       if (move.value == "S") {
         scoreMoves += 1000;
-        this.exit = true
+        if (!this.exit) {
+          this.path.push(move.coord);
+        }
+        this.exit = true;
         this.fitness = scoreMoves;
         return;
       }
-
-      for (let i = 0; i < this.path.length; i++) {
-        if (
-          move.coord &&
-          this.path[i][0] == move.coord[0] &&
-          this.path[i][1] == move.coord[1]
-        ) {
-          this.countPathNoRepeat--;
-          scoreMoves += -100;
-          break;
+      if (!this.exit) {
+        for (let i = 0; i < this.path.length; i++) {
+          if (
+            move.coord &&
+            this.path[i][0] == move.coord[0] &&
+            this.path[i][1] == move.coord[1]
+          ) {
+            this.countPathNoRepeat--;
+            scoreMoves += -100;
+            break;
+          }
         }
-      }
 
-      switch (move.value) {
-        case "0":
-          this.currentCord = move.coord;
-          this.path.push(move.coord);
-          this.countPathNoRepeat++;
-          break;
-        case "E":
-          this.currentCord = move.coord;
-          this.path.push(move.coord);
-          this.countPathNoRepeat++;
-          break;
-        default:
-          break;
+        switch (move.value) {
+          case "0":
+            this.currentCord = move.coord;
+            this.path.push(move.coord);
+            this.countPathNoRepeat++;
+            break;
+          case "E":
+            this.currentCord = move.coord;
+            this.path.push(move.coord);
+            this.countPathNoRepeat++;
+            break;
+          default:
+            break;
+        }
       }
     });
     this.fitness = scoreMoves;

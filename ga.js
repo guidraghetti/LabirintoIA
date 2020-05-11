@@ -8,12 +8,13 @@ class Ga {
     this.population = this.generateInitialPopulation();
     this.generation = new Array();
     this.listFitness = new Array().fill(0);
-    this.maxFitness = 0;
+    this.maxFitness = null;
     this.randomChoose = -1;
     this.countChangeFitness = 0;
   }
 
   generateInitialPopulation() {
+    console.log("Gerando população inicial");
     let listPopulation = new Array();
     for (let i = 0; i < this.lengthPopulation; i++) {
       listPopulation.push(new Chromosome(this.maxFreeBlocks, 7));
@@ -22,6 +23,7 @@ class Ga {
   }
 
   elistism() {
+    console.log("Realizando elitismo");
     const compare = (a, b) => {
       if (a.fitness < b.fitness) {
         return 1;
@@ -37,12 +39,12 @@ class Ga {
       compare
     );
     if (
-      this.maxFitness === 0 ||
+      this.maxFitness === null ||
       this.maxFitness < this.sortedLastGen[0].fitness
     ) {
       this.maxFitness = this.sortedLastGen[0];
       this.countChangeFitness = 0;
-    }else{
+    } else {
       this.countChangeFitness++;
     }
 
@@ -55,6 +57,7 @@ class Ga {
   }
 
   tournament() {
+    console.log("Realizando torneio");
     let firstRand;
     while (true) {
       firstRand = this.randomIntFromInterval(
@@ -89,6 +92,7 @@ class Ga {
   }
 
   crossover() {
+    console.log("Realizando Crossover");
     const sons = [];
     for (
       let i = 0;
@@ -116,6 +120,7 @@ class Ga {
   }
 
   mutation() {
+    console.log("Realizando mutação");
     const randChromosome = this.randomIntFromInterval(
       1,
       this.population.length - 1
@@ -126,39 +131,48 @@ class Ga {
   }
 
   calculateFitness() {
+    console.log("Calculando aptidão");
     let listFit = new Array();
     for (let i = 0; i < this.population.length; i++) {
-      console.log("\n\n", "---Cromossomo ", i, "------");
+      // console.log("\n\n", "---Cromossomo ", i, "------");
       listFit.push(this.population[i].calculateWay(this.matrix));
-      console.log(
-        this.population[i].path,
-        this.population[i].countPathNoRepeat,
-        "\n"
-      );
+      // console.log(
+      //   this.population[i].path,
+      //   this.population[i].countPathNoRepeat,
+      //   "\n"
+      // );
     }
-    console.log("\nLista Final:", listFit);
+    // console.log("\nLista Final:", listFit);
     return listFit;
   }
 
   verifySolution() {
     let foundExit = false;
-    while (this.countChangeFitness<=1 || foundExit) {
+    while (this.countChangeFitness <= 10000 && !foundExit) {
       this.listFitness = this.calculateFitness();
-        this.population.forEach((chromosome, index) => {
-          if (chromosome.exit) {
-            console.log("Caminho AG: ", chromosome.getPath());
-            foundExit = true;
-          }
-        });
-      } if (!foundExit) {
+      this.population.forEach((chromosome, index) => {
+        if (chromosome.exit) {
+          console.log("Caminho AG: ", chromosome.getPath());
+          foundExit = true;
+        }
+      });
+
+      if (!foundExit) {
         this.generation.push(this.population);
+        console.log(`-----Geração ${this.generation.length - 1}-----`);
+        console.log(this.population);
         this.population = new Array();
-        this.population.push(this.elistism());
-        console.log("Caminho AG incompleto: \n", this.maxFitness);
+        const elistism = this.elistism();
+        this.population.push(elistism);
+
         this.crossover();
         this.mutation();
       }
     }
+    if (!foundExit) {
+      console.log("Caminho AG incompleto: \n", this.maxFitness);
+    }
   }
+}
 
 module.exports = Ga;
