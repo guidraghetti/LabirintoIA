@@ -157,13 +157,13 @@ class Chromosome {
       case "B":
         return -1000;
       case "1":
-        return -10;
+        return -100;
       case "E":
         return -100;
       case "S":
         return 1000;
       case -1:
-        return -10;
+        return -100;
       default:
         console.log("moveValueError", moveValue);
     }
@@ -176,7 +176,6 @@ class Chromosome {
       scoreMoves = scoreMoves + this.calcScore(move.value);
 
       if (move.value == "S") {
-        scoreMoves += 1000;
         if (!this.exit) {
           this.path.push(move.coord);
         }
@@ -191,8 +190,8 @@ class Chromosome {
             this.path[i][0] == move.coord[0] &&
             this.path[i][1] == move.coord[1]
           ) {
+            scoreMoves += -10 * this.countPathNoRepeat;
             this.countPathNoRepeat--;
-            scoreMoves += -100;
             break;
           }
         }
@@ -214,7 +213,6 @@ class Chromosome {
       }
     });
     this.fitness = scoreMoves;
-    return scoreMoves;
   }
 }
 
