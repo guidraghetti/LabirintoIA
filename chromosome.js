@@ -7,6 +7,7 @@ class Chromosome {
     this.path = new Array();
     this.countPathNoRepeat = 0;
     this.fitness = 0;
+    this.exit = false;
   }
 
   randomBetween(min, max) {
@@ -24,6 +25,10 @@ class Chromosome {
 
   getPath() {
     return this.path;
+  }
+
+  getExit(){
+    return this.exit;
   }
 
   generateChromosome() {
@@ -171,7 +176,8 @@ class Chromosome {
       scoreMoves = scoreMoves + this.calcScore(move.value);
 
       if (move.value == "S") {
-        scoreMoves = 1000;
+        scoreMoves += 1000;
+        this.exit = true
         this.fitness = scoreMoves;
         return;
       }

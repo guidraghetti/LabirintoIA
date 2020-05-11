@@ -10,6 +10,7 @@ class Ga {
     this.listFitness = new Array().fill(0);
     this.maxFitness = 0;
     this.randomChoose = -1;
+    this.countChangeFitness = 0;
   }
 
   generateInitialPopulation() {
@@ -40,6 +41,9 @@ class Ga {
       this.maxFitness < this.sortedLastGen[0].fitness
     ) {
       this.maxFitness = this.sortedLastGen[0];
+      this.countChangeFitness = 0;
+    }else{
+      this.countChangeFitness++;
     }
 
     return this.sortedLastGen[0];
@@ -137,27 +141,24 @@ class Ga {
   }
 
   verifySolution() {
-    let maxLoop = 10000;
-    while (maxLoop) {
+    let foundExit = false;
+    while (this.countChangeFitness<=1 || foundExit) {
       this.listFitness = this.calculateFitness();
-      if (this.listFitness.includes(1000)) {
-        this.listFitness.forEach((fitness, index) => {
-          if (fitness == 1000) {
-            console.log("Caminho AG: ", this.population[index].getPath());
-            maxLoop = 0;
+        this.population.forEach((chromosome, index) => {
+          if (chromosome.exit) {
+            console.log("Caminho AG: ", chromosome.getPath());
+            foundExit = true;
           }
         });
-      } else {
+      } if (!foundExit) {
         this.generation.push(this.population);
         this.population = new Array();
         this.population.push(this.elistism());
         console.log("Caminho AG incompleto: \n", this.maxFitness);
         this.crossover();
         this.mutation();
-        maxLoop--;
       }
     }
   }
-}
 
 module.exports = Ga;
