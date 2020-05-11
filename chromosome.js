@@ -18,6 +18,10 @@ class Chromosome {
     return this.genes;
   }
 
+  setChomosome(genes) {
+    this.genes = genes;
+  }
+
   getPath() {
     return this.path;
   }
@@ -167,7 +171,7 @@ class Chromosome {
       scoreMoves = scoreMoves + this.calcScore(move.value);
 
       if (move.value == "S") {
-        scoreMoves += 1000;
+        scoreMoves = 1000;
         this.fitness = scoreMoves;
         return;
       }
