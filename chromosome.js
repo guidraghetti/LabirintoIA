@@ -153,7 +153,7 @@ class Chromosome {
   calcScore(moveValue) {
     switch (moveValue) {
       case "0":
-        return this.countPathNoRepeat * 2;
+        return this.countPathNoRepeat * 10;
       case "B":
         return -1000;
       case "1":
@@ -190,7 +190,7 @@ class Chromosome {
             this.path[i][0] == move.coord[0] &&
             this.path[i][1] == move.coord[1]
           ) {
-            scoreMoves += -10 * this.countPathNoRepeat;
+            scoreMoves += -20 * this.countPathNoRepeat;
             this.countPathNoRepeat--;
             break;
           }
