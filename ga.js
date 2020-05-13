@@ -222,9 +222,7 @@ class Ga {
             cromossome.path,
             );
           this.output += `\nCromossomo ${index}:
-          \nCaminho: ${JSON.stringify(cromossome.path)}\nGenes:${JSON.stringify(
-            cromossome.genes
-          )}\n`;
+          \nCaminho: ${JSON.stringify(cromossome.path)}\n`;
         });
         this.population = new Array();
         const elistism = this.elistism();
