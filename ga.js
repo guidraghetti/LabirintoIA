@@ -1,13 +1,14 @@
 const Chromosome = require("./chromosome");
 
 class Ga {
-  constructor(lengthPopulation, matrix, maxFreeBlocks) {
+  constructor(lengthPopulation, matrix, maxFreeBlocks, porcentMutation) {
     this.matrix = matrix;
     this.maxFreeBlocks = maxFreeBlocks;
     this.lengthPopulation = lengthPopulation;
     this.population = this.generateInitialPopulation();
     this.generation = new Array();
     this.maxFitness = null;
+    this.porcentMutation = porcentMutation;
     this.randomChoose = -1;
     this.countChangeFitness = -Number.MAX_SAFE_INTEGER;
     console.log(this.countChangeFitness);
@@ -125,17 +126,22 @@ class Ga {
   }
 
   mutation() {
-    const randChromosome = this.randomIntFromInterval(
-      1,
-      this.population.length - 1
+    const lenghtMutations = parseInt(
+      this.maxFreeBlocks * (this.porcentMutation / 100)
     );
-    const positionGene = this.randomIntFromInterval(0, this.maxFreeBlocks - 1);
-    const randGene = this.randomIntFromInterval(0, 7);
     console.log("---- Realizando mutação ----- \n");
-    console.log("Cromossomo escolhido: ", randChromosome);
-    console.log("Posição do Gene: ", randGene);
-    console.log("Valor do Gene: ", randGene, "\n");
-    this.population[randChromosome].getChromosome()[positionGene] = randGene;
+
+    for (let i = 1; i < this.population.length; i++) {
+      for (let i = 0; i < lenghtMutations; i++) {
+        const positionGene = this.randomIntFromInterval(
+          0,
+          this.maxFreeBlocks - 1
+        );
+        const randGene = this.randomIntFromInterval(0, 7);
+        this.population[i].getChromosome()[positionGene] = randGene;
+      }
+    }
+    console.log("Mutação concluída\n");
   }
 
   calculateFitness() {
@@ -149,7 +155,8 @@ class Ga {
 
   verifySolution() {
     let foundExit = false;
-    while (this.countChangeFitness <= 500 && !foundExit) {
+    let maxLoop = 100000;
+    while (maxLoop >= 0 && this.countChangeFitness <= 500 && !foundExit) {
       this.calculateFitness();
       this.population.forEach((chromosome, index) => {
         if (chromosome.exit && !foundExit) {
@@ -179,6 +186,7 @@ class Ga {
         this.crossover();
         this.mutation();
       }
+      maxLoop--;
     }
     if (!foundExit) {
       console.log("\nCaminho NÃO encontrado!!!");
