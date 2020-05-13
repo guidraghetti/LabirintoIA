@@ -205,7 +205,7 @@ class Ga {
           console.log("Qualide Heurística: ", chromosome.fitness);
           this.output += "Qualide Heurística: " + chromosome.fitness + "\n";
           foundExit = true;
-          const aStar = new AStarAlgorithm(this.matrix);
+          const aStar = new AStarAlgorithm(this.matrix, this.output);
           console.log(chromosome.getPath()[chromosome.getPath().length-1])
          aStar.a_Star([0,0],chromosome.getPath()[chromosome.getPath().length-1] );
         }
