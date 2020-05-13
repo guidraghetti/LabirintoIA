@@ -7,8 +7,8 @@ class AStarAlgorithm {
      heuristics(start, goal){
         let dx = Math.abs(start[0] - goal[1])
         let dy = Math.abs(start[1] - goal[0])
-        return 10 * (dx + dy) - 5.857 * Math.min(dx, dy)
-
+        let sum = 10 * (dx + dy) - 5.857 * Math.min(dx, dy)
+        return sum;
     }
 
      a_Star(start, goal) {
@@ -24,33 +24,32 @@ class AStarAlgorithm {
 
         openList.push(startNode);
 
-
         while (openList.length > 0) {
+            //console.table(openList)
             let currentNode = openList[0];
            
-            let currentIndex = 0;
 
             openList.forEach(element => {
                if(element.f < currentNode.f){
                    currentNode = element;
-                   currentIndex = openList.indexOf(element);
                }
             })
 
-            openList.slice(openList.indexOf(currentNode), 1);
+            openList.splice(openList.indexOf(currentNode), 1);
             closedList.push(currentNode)
-            let a = [2,4];
-            let b = [2,4];
-            
+           // console.table(openList)
+            //console.table(closedList)
+            //console.log(currentNode.position.toString() == goalNode.position.toString() ? 'True' : 'False')
+           // console.log(currentNode);
             if (currentNode.position.toString() == goalNode.position.toString()) {
                 let path = [];
                 let current = currentNode;
+                console.log('Entrou', currentNode.position)
                 while (current.parent !== null) {
                     path.push(current.position);
                     current = current.parent;
-                    console.log(current.parent);
                 }
-                //console.log(path.reverse());
+                console.log(path.reverse());
                 return 
             }
             let neighbors = [];
@@ -71,29 +70,43 @@ class AStarAlgorithm {
                         continue
                 }
 
-                let newNode = new NodeMaze(currentNode, currentNode.position)
+                let newNode = new NodeMaze(currentNode, nodePosition)
                 //console.log (newNode);
                 neighbors.push(newNode);
+                 //console.table(neighbors)
                 
             }
             //console.log(neighbors);
-            let indexNeighbor = neighbors.length-1;
-
-            while (indexNeighbor > 0) {
-                if (closedList.includes(neighbors[indexNeighbor])){
+            let indexNeighbor = 0;
+            while (indexNeighbor < neighbors.length) {
+               //console.table(closedList)
+               console.log(neighbors[indexNeighbor], indexNeighbor, neighbors.length)
+               
+                
+               for (let i = 0; i < closedList.length; i ++) {
+                   if(neighbors[indexNeighbor] && closedList[i].position.toString() == neighbors[indexNeighbor].position.toString()){
+                    console.log('Entrou no closed');
+                    indexNeighbor ++;
                     continue
-                }
+                   }
+               }
+               if(neighbors.length === indexNeighbor){
+                break
+                 }
+               // console.log(currentNode);
                 neighbors[indexNeighbor].g = currentNode.g + 1;
-                neighbors[indexNeighbor].f = neighbors[indexNeighbor].g + this.heuristics(neighbors[indexNeighbor], goal)
+                //console.log('Valor =', neighbors[indexNeighbor].g + this.heuristics(neighbors[indexNeighbor], goal));
+                neighbors[indexNeighbor].f = neighbors[indexNeighbor].g + this.heuristics(neighbors[indexNeighbor].position, goal)
 
                 for (let i = 0; i< openList.length; i++) {
-                    if (neighbors[indexNeighbor] == openList[i] && neighbors[indexNeighbor].g > openList[i].g) {
+                    if (neighbors[indexNeighbor].position == openList[i].position && neighbors[indexNeighbor].g > openList[i].g) {
+                        indexNeighbor++;
                         continue;
                     }
                 }
                 openList.push(neighbors[indexNeighbor])
 
-                indexNeighbor --;
+                indexNeighbor ++;
             }
         }
         return false;

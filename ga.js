@@ -1,5 +1,6 @@
 const Chromosome = require("./chromosome");
 const fs = require("fs");
+const AStarAlgorithm = require("./aStarAlgorithm");
 class Ga {
   constructor(
     lengthPopulation,
@@ -204,6 +205,9 @@ class Ga {
           console.log("Qualide Heurística: ", chromosome.fitness);
           this.output += "Qualide Heurística: " + chromosome.fitness + "\n";
           foundExit = true;
+          const aStar = new AStarAlgorithm(this.matrix);
+          console.log(chromosome.getPath()[chromosome.getPath().length-1])
+         aStar.a_Star([0,0],chromosome.getPath()[chromosome.getPath().length-1] );
         }
       });
 
