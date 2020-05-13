@@ -220,9 +220,7 @@ class Ga {
             `Cromossomo ${index}: \n`,
             "Caminho: ",
             cromossome.path,
-            "\n Genes: ",
-            cromossome.genes
-          );
+            );
           this.output += `\nCromossomo ${index}:
           \nCaminho: ${JSON.stringify(cromossome.path)}\nGenes:${JSON.stringify(
             cromossome.genes
