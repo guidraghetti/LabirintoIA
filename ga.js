@@ -50,7 +50,10 @@ class Ga {
     this.sortedLastGen = this.generation[this.generation.length - 1].sort(
       compare
     );
-    if (this.maxFitness < this.sortedLastGen[0].fitness) {
+    if (
+      this.maxFitness === null ||
+      this.maxFitness.fitness < this.sortedLastGen[0].fitness
+    ) {
       this.maxFitness = this.sortedLastGen[0];
       this.countChangeFitness = 0;
     } else {
@@ -186,8 +189,8 @@ class Ga {
 
   verifySolution() {
     let foundExit = false;
-    let maxLoop = 100000;
-    while (maxLoop >= 0 && this.countChangeFitness <= 500 && !foundExit) {
+    let maxLoop = 10000;
+    while (maxLoop >= 0 && this.countChangeFitness <= 50 && !foundExit) {
       this.calculateFitness();
       this.population.forEach((chromosome, index) => {
         if (chromosome.exit && !foundExit) {
@@ -197,6 +200,7 @@ class Ga {
           console.log("Caminho AG: ", chromosome.getPath());
           this.output +=
             "Caminho AG: " + JSON.stringify(chromosome.getPath()) + "\n";
+          console.log("Genes: ", chromosome.getChromosome());
           console.log("Qualide Heurística: ", chromosome.fitness);
           this.output += "Qualide Heurística: " + chromosome.fitness + "\n";
           foundExit = true;
@@ -239,7 +243,8 @@ class Ga {
         "\n";
       console.log("Qualidade Heurística: ", this.maxFitness.fitness);
       this.output +=
-        "Melhor qualidade Heurística: " + this.maxFitness.fitness + "\n";
+        "Melhor qualidade Heurística: " + this.maxFitness &&
+        this.maxFitness.fitness + "\n";
     }
     fs.writeFileSync(
       __dirname.concat(

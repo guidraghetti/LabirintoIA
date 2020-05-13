@@ -5,7 +5,7 @@ class Chromosome {
     this.currentCord = [0, 0]; //row, col
     this.genes = this.generateChromosome();
     this.path = new Array();
-    this.countPathNoRepeat = 0;
+    this.countPathsRepeat = 0;
     this.fitness = 0;
     this.exit = false;
   }
@@ -153,7 +153,7 @@ class Chromosome {
   calcScore(moveValue) {
     switch (moveValue) {
       case "0":
-        return this.countPathNoRepeat * 10;
+        return 0;
       case "B":
         return -1000;
       case "1":
@@ -161,7 +161,7 @@ class Chromosome {
       case "E":
         return -100;
       case "S":
-        return 1000;
+        return 0;
       case -1:
         return -100;
       default:
@@ -170,17 +170,17 @@ class Chromosome {
   }
 
   calculateWay(matrix) {
-    let scoreMoves = 0;
     this.genes.forEach((gene) => {
       const move = this.move(gene, matrix);
-      scoreMoves = scoreMoves + this.calcScore(move.value);
-
-      if (move.value == "S") {
+      if (!this.exit) {
+        this.fitness += this.calcScore(move.value);
+      }
+      if (move.value == "S" && this.fitness > -999) {
         if (!this.exit) {
           this.path.push(move.coord);
         }
         this.exit = true;
-        this.fitness = scoreMoves;
+        console.log("SCOREMOVES", this.fitness);
         return;
       }
       if (!this.exit) {
@@ -190,8 +190,8 @@ class Chromosome {
             this.path[i][0] == move.coord[0] &&
             this.path[i][1] == move.coord[1]
           ) {
-            scoreMoves += -20 * this.countPathNoRepeat;
-            this.countPathNoRepeat--;
+            this.fitness += -10 * this.countPathsRepeat;
+            this.countPathsRepeat++;
             break;
           }
         }
@@ -200,19 +200,16 @@ class Chromosome {
           case "0":
             this.currentCord = move.coord;
             this.path.push(move.coord);
-            this.countPathNoRepeat++;
             break;
           case "E":
             this.currentCord = move.coord;
             this.path.push(move.coord);
-            this.countPathNoRepeat++;
             break;
           default:
             break;
         }
       }
     });
-    this.fitness = scoreMoves;
   }
 }
 
