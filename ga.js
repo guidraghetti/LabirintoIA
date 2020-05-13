@@ -1,10 +1,17 @@
 const Chromosome = require("./chromosome");
-
+const fs = require("fs");
 class Ga {
-  constructor(lengthPopulation, matrix, maxFreeBlocks, porcentMutation) {
+  constructor(
+    lengthPopulation,
+    matrix,
+    maxFreeBlocks,
+    porcentMutation,
+    fileName
+  ) {
     this.matrix = matrix;
     this.maxFreeBlocks = maxFreeBlocks;
     this.lengthPopulation = lengthPopulation;
+    this.output = "";
     this.population = this.generateInitialPopulation();
     this.generation = new Array();
     this.maxFitness = null;
@@ -12,18 +19,23 @@ class Ga {
     this.randomChoose = -1;
     this.countChangeFitness = -Number.MAX_SAFE_INTEGER;
     console.log(this.countChangeFitness);
+    this.fileName = fileName;
   }
 
   generateInitialPopulation() {
+    this.output += "\n---- Gerando População Inicial -----\n";
     let listPopulation = new Array();
     for (let i = 0; i < this.lengthPopulation; i++) {
       listPopulation.push(new Chromosome(this.maxFreeBlocks, 7));
     }
+    this.output +=
+      "\nPopulação gerada: " + JSON.stringify(listPopulation) + "\n";
     return listPopulation;
   }
 
   elistism() {
-    console.log("\n---- Realizando Elitismo ----m");
+    console.log("\n---- Realizando Elitismo -----");
+    this.output += "\n---- Realizando Elitismo ----\n";
     const compare = (a, b) => {
       if (a.fitness < b.fitness) {
         return 1;
@@ -45,6 +57,8 @@ class Ga {
       this.countChangeFitness++;
     }
     console.log("\nCromossomo Vencedor: ", this.sortedLastGen[0].fitness, "\n");
+    this.output +=
+      "\nCromossomo Vencedor: " + this.sortedLastGen[0].fitness + "\n";
     return this.sortedLastGen[0];
   }
 
@@ -76,6 +90,7 @@ class Ga {
       }
     }
     console.log("----- Realizando Torneio ----- \n");
+    this.output += "\n----- Realizando Torneio ----- \n";
     const first = this.generation[this.generation.length - 1][firstRand];
     const second = this.generation[this.generation.length - 1][secondRand];
     console.log(
@@ -85,19 +100,28 @@ class Ga {
       second.fitness,
       "\n"
     );
+    this.output +=
+      "\nPrimeiro Cromossomo Randômico: " +
+      first.fitness +
+      "\nSegundo Cromossomo Randômico: " +
+      second.fitness +
+      "\n";
     if (first.fitness > second.fitness) {
       this.randomChoose = firstRand;
       console.log("Vencedor: ", first.fitness, "\n");
+      this.output += "\nVencedor: " + first.fitness + "\n";
       return first;
     }
 
     console.log("Vencedor: ", second.fitness, "\n");
+    this.output += "\nVencedor: " + first.fitness + "\n";
     this.randomChoose = secondRand;
     return second;
   }
 
   crossover() {
     console.log("----- Realizando Crossover ------\n");
+    this.output += "\n----- Realizando Crossover ------\n";
     const sons = [];
     for (
       let i = 0;
@@ -123,6 +147,7 @@ class Ga {
     }
     this.population.push(...sons);
     console.log("Crossover realizado com sucesso\n");
+    this.output += "\nCrossover realizado com sucesso\n";
   }
 
   mutation() {
@@ -130,6 +155,7 @@ class Ga {
       this.maxFreeBlocks * (this.porcentMutation / 100)
     );
     console.log("---- Realizando mutação ----- \n");
+    this.output += "\n---- Realizando mutação ----- \n";
 
     for (let i = 1; i < this.population.length; i++) {
       for (let i = 0; i < lenghtMutations; i++) {
@@ -142,14 +168,19 @@ class Ga {
       }
     }
     console.log("Mutação concluída\n");
+    this.output += "\nMutação concluída\n";
   }
 
   calculateFitness() {
     console.log("----- Calculando aptidão -----\n");
+    this.output += "\n----- Calculando aptidão -----\n";
     for (let i = 0; i < this.population.length; i++) {
       console.log("\nCromossomo ", i, ": ");
+      this.output += "\nCromossomo " + i + ":";
       this.population[i].calculateWay(this.matrix);
       console.log("Qualidade Heurística: ", this.population[i].fitness);
+      this.output +=
+        "\nQualidade Heurística: " + this.population[i].fitness + "\n";
     }
   }
 
@@ -161,8 +192,13 @@ class Ga {
       this.population.forEach((chromosome, index) => {
         if (chromosome.exit && !foundExit) {
           console.log("\nCaminho encontrado!!!");
+          this.output += "\nCaminho encontrado!!!\n";
+          this.output += "\nCromossomo: " + index + "\n";
           console.log("Caminho AG: ", chromosome.getPath());
+          this.output +=
+            "Caminho AG: " + JSON.stringify(chromosome.getPath()) + "\n";
           console.log("Qualide Heurística: ", chromosome.fitness);
+          this.output += "Qualide Heurística: " + chromosome.fitness + "\n";
           foundExit = true;
         }
       });
@@ -170,6 +206,7 @@ class Ga {
       if (!foundExit) {
         this.generation.push(this.population);
         console.log(`\n-----Geração ${this.generation.length - 1}-----\n`);
+        this.output += `\n-----Geração ${this.generation.length - 1}-----\n`;
         this.population.forEach((cromossome, index) => {
           console.log(
             `Cromossomo ${index}: \n`,
@@ -178,6 +215,10 @@ class Ga {
             "\n Genes: ",
             cromossome.genes
           );
+          this.output += `\nCromossomo ${index}:
+          \nCaminho: ${JSON.stringify(cromossome.path)}\nGenes:${JSON.stringify(
+            cromossome.genes
+          )}\n`;
         });
         this.population = new Array();
         const elistism = this.elistism();
@@ -190,9 +231,22 @@ class Ga {
     }
     if (!foundExit) {
       console.log("\nCaminho NÃO encontrado!!!");
+      this.output += "\nCaminho NÃO encontrado!!!\n";
       console.log("Caminho AG incompleto: \n", this.maxFitness.path);
+      this.output +=
+        "\nMelhor caminho AG incompleto: \n" +
+        JSON.stringify(this.maxFitness.path) +
+        "\n";
       console.log("Qualidade Heurística: ", this.maxFitness.fitness);
+      this.output +=
+        "Melhor qualidade Heurística: " + this.maxFitness.fitness + "\n";
     }
+    fs.writeFileSync(
+      __dirname.concat(
+        `/output/${this.fileName.replace(".txt", "")}-output.txt`
+      ),
+      this.output
+    );
   }
 }
 

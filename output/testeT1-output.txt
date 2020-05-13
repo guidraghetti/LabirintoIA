@@ -1,0 +1,733 @@
+
+---- Gerando População Inicial -----
+
+População gerada: [{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[4,7,6,1,6,6,0,6,2,6,5,3,3,5,5,3,1,2,1,3,7,2,1,4,4,2,2,2,2,5,0,2,0,5,1,4,3,2,4,3,4],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[6,3,4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,6,1,3,7,3,1,4,1,6],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[3,3,0,7,3,1,4,0,1,4,6,0,4,7,2,5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[2,1,3,7,2,2,3,1,5,1,5,0,2,2,4,2,0,7,7,5,3,1,4,3,1,6,1,3,6,2,6,1,6,4,2,7,3,4,3,1,6],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[7,3,3,6,3,3,5,4,3,3,0,6,3,1,5,7,5,1,6,7,5,3,2,5,5,4,5,7,1,6,6,5,4,7,5,4,7,6,1,1,7],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[2,2,4,5,1,6,6,0,3,7,6,7,1,2,3,1,5,1,6,6,0,0,4,7,3,0,6,2,2,4,2,5,5,3,4,6,4,2,3,3,5],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[6,3,5,1,5,2,1,3,7,4,1,3,3,0,2,3,6,2,5,3,6,6,6,2,7,2,2,1,4,4,5,1,3,5,3,2,4,5,3,6,3],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7,6,0,1,2,1,3,0,2,1,3,4,1,3,5,4,5,6,4,3,5],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[2,4,6,0,6,2,5,1,0,2,6,3,1,2,6,5,6,7,1,2,1,0,4,6,2,2,3,5,2,2,0,5,4,1,5,6,5,3,2,4,3],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false},{"genesLenght":7,"maxLength":41,"currentCord":[0,0],"genes":[6,2,3,4,1,6,3,5,2,5,2,5,4,1,6,0,5,5,5,4,0,0,1,6,1,2,2,6,4,6,1,3,5,2,2,1,3,6,7,6,2],"path":[],"countPathNoRepeat":0,"fitness":0,"exit":false}]
+
+----- Calculando aptidão -----
+
+Cromossomo 0:
+Qualidade Heurística: -15390
+
+Cromossomo 1:
+Qualidade Heurística: -9940
+
+Cromossomo 2:
+Qualidade Heurística: -10140
+
+Cromossomo 3:
+Qualidade Heurística: -13070
+
+Cromossomo 4:
+Qualidade Heurística: -9110
+
+Cromossomo 5:
+Qualidade Heurística: -9510
+
+Cromossomo 6:
+Qualidade Heurística: -14240
+
+Cromossomo 7:
+Qualidade Heurística: -9050
+
+Cromossomo 8:
+Qualidade Heurística: -10420
+
+Cromossomo 9:
+Qualidade Heurística: -12390
+
+-----Geração 0-----
+
+Cromossomo 0:
+          
+Caminho: [[0,1],[0,0],[1,1],[2,2],[3,1],[4,0],[3,1],[2,2],[3,3],[2,2],[1,3],[2,2],[1,2],[1,3],[2,2],[1,3]]
+Genes:[4,7,6,1,6,6,0,6,2,6,5,3,3,5,5,3,1,2,1,3,7,2,1,4,4,2,2,2,2,5,0,2,0,5,1,4,3,2,4,3,4]
+
+Cromossomo 1:
+          
+Caminho: [[1,1],[0,1],[0,0],[0,1],[1,2],[1,3],[2,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[2,2],[3,3],[2,2],[3,3]]
+Genes:[6,3,4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,6,1,3,7,3,1,4,1,6]
+
+Cromossomo 2:
+          
+Caminho: [[1,1],[2,2],[1,2],[0,1],[1,2],[2,2],[1,2],[2,2],[1,2],[2,2],[1,1],[1,2],[1,3],[1,2],[0,1],[0,0],[1,1],[0,2],[0,1],[0,0],[0,1],[0,0]]
+Genes:[3,3,0,7,3,1,4,0,1,4,6,0,4,7,2,5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0]
+
+Cromossomo 3:
+          
+Caminho: [[0,1],[1,2],[0,1],[0,2],[1,3],[0,4],[1,3],[0,4],[1,3],[0,2],[1,1],[2,2],[1,3],[0,4],[0,5],[0,4],[0,5],[1,6],[0,7]]
+Genes:[2,1,3,7,2,2,3,1,5,1,5,0,2,2,4,2,0,7,7,5,3,1,4,3,1,6,1,3,6,2,6,1,6,4,2,7,3,4,3,1,6]
+
+Cromossomo 4:
+          
+Caminho: [[1,1],[2,2],[3,3],[4,4],[5,4],[4,4],[3,3],[4,2],[3,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[7,3,3,6,3,3,5,4,3,3,0,6,3,1,5,7,5,1,6,7,5,3,2,5,5,4,5,7,1,6,6,5,4,7,5,4,7,6,1,1,7]
+
+Cromossomo 5:
+          
+Caminho: [[0,1],[0,2],[1,2],[1,1],[0,1],[1,2],[0,1],[0,0],[0,1],[1,2],[1,1],[0,1],[1,1],[0,0],[1,1],[0,1],[0,0],[0,1],[0,2],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[2,2,4,5,1,6,6,0,3,7,6,7,1,2,3,1,5,1,6,6,0,0,4,7,3,0,6,2,2,4,2,5,5,3,4,6,4,2,3,3,5]
+
+Cromossomo 6:
+          
+Caminho: [[1,1],[0,2],[1,1],[1,2],[0,1],[1,1],[0,2],[1,3],[1,2],[1,3],[2,2],[3,3],[2,2],[1,3],[2,2],[1,3],[2,2],[3,3],[4,2]]
+Genes:[6,3,5,1,5,2,1,3,7,4,1,3,3,0,2,3,6,2,5,3,6,6,6,2,7,2,2,1,4,4,5,1,3,5,3,2,4,5,3,6,3]
+
+Cromossomo 7:
+          
+Caminho: [[0,1],[0,0],[1,1],[2,2],[3,3],[2,2],[1,2],[1,3],[0,4],[0,5],[1,6],[0,7],[1,8],[2,8],[3,8]]
+Genes:[1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7,6,0,1,2,1,3,0,2,1,3,4,1,3,5,4,5,6,4,3,5]
+
+Cromossomo 8:
+          
+Caminho: [[0,1],[1,1],[0,1],[0,0],[0,1],[0,2],[0,1],[1,2],[1,3],[1,2],[1,1],[0,0],[0,1],[1,1],[1,2],[1,3],[2,2],[1,2],[2,2],[1,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[2,4,6,0,6,2,5,1,0,2,6,3,1,2,6,5,6,7,1,2,1,0,4,6,2,2,3,5,2,2,0,5,4,1,5,6,5,3,2,4,3]
+
+Cromossomo 9:
+          
+Caminho: [[0,1],[1,2],[2,2],[1,3],[1,2],[1,3],[2,2],[3,1],[2,2],[1,2],[2,2],[1,2],[0,2],[0,1],[0,2],[0,1],[1,1],[0,2],[1,3],[2,2],[1,3],[1,2],[0,1],[0,0],[0,1]]
+Genes:[6,2,3,4,1,6,3,5,2,5,2,5,4,1,6,0,5,5,5,4,0,0,1,6,1,2,2,6,4,6,1,3,5,2,2,1,3,6,7,6,2]
+
+---- Realizando Elitismo ----
+
+Cromossomo Vencedor: -9050
+
+----- Realizando Crossover ------
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9940
+Segundo Cromossomo Randômico: -14240
+
+Vencedor: -9940
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -12390
+Segundo Cromossomo Randômico: -9050
+
+Vencedor: -12390
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9940
+Segundo Cromossomo Randômico: -14240
+
+Vencedor: -9940
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -10420
+Segundo Cromossomo Randômico: -9110
+
+Vencedor: -10420
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9510
+Segundo Cromossomo Randômico: -9050
+
+Vencedor: -9510
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9510
+Segundo Cromossomo Randômico: -10420
+
+Vencedor: -9510
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -15390
+Segundo Cromossomo Randômico: -13070
+
+Vencedor: -15390
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9110
+Segundo Cromossomo Randômico: -9510
+
+Vencedor: -9110
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -14240
+Segundo Cromossomo Randômico: -10140
+
+Vencedor: -14240
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9110
+Segundo Cromossomo Randômico: -9510
+
+Vencedor: -9110
+
+Crossover realizado com sucesso
+
+---- Realizando mutação ----- 
+
+Mutação concluída
+
+----- Calculando aptidão -----
+
+Cromossomo 0:
+Qualidade Heurística: -5160
+
+Cromossomo 1:
+Qualidade Heurística: -11950
+
+Cromossomo 2:
+Qualidade Heurística: -10040
+
+Cromossomo 3:
+Qualidade Heurística: -9920
+
+Cromossomo 4:
+Qualidade Heurística: -9940
+
+Cromossomo 5:
+Qualidade Heurística: -9510
+
+Cromossomo 6:
+Qualidade Heurística: -9510
+
+Cromossomo 7:
+Qualidade Heurística: -8270
+
+Cromossomo 8:
+Qualidade Heurística: -10770
+
+Cromossomo 9:
+Qualidade Heurística: -9390
+
+Cromossomo 10:
+Qualidade Heurística: -13540
+
+-----Geração 1-----
+
+Cromossomo 0:
+          
+Caminho: [[0,1],[0,0],[1,1],[2,2],[3,3],[2,2],[1,2],[1,3],[0,4],[0,5],[1,6],[0,7],[1,8],[2,8],[3,8],[2,8],[3,8],[4,8],[3,8],[2,8],[3,8],[4,8],[5,7],[5,6],[6,6]]
+Genes:[1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7,6,0,1,2,1,3,0,2,1,3,4,1,3,5,4,5,6,4,3,5]
+
+Cromossomo 1:
+          
+Caminho: [[1,1],[0,0],[1,1],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[2,2],[3,3],[2,2],[3,3],[4,4],[5,4],[4,5],[4,6],[5,6]]
+Genes:[1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,6,1,3,7,3,1,4,1,6,1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4]
+
+Cromossomo 2:
+          
+Caminho: [[0,1],[0,0],[1,1],[2,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[2,2],[3,3],[2,2],[3,3]]
+Genes:[1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,6,1,3,7,3,1,4,1,6]
+
+Cromossomo 3:
+          
+Caminho: [[0,1],[1,2],[1,3],[2,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[2,2],[3,3],[2,2],[3,3],[2,2],[3,3]]
+Genes:[4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,6,1,3,7,3,1,4,1,6,7,3]
+
+Cromossomo 4:
+          
+Caminho: [[1,1],[0,1],[0,0],[0,1],[1,2],[1,3],[2,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[2,2],[3,3],[2,2],[3,3]]
+Genes:[7,3,4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,6,1,3,7,3,1,4,1,6]
+
+Cromossomo 5:
+          
+Caminho: [[0,1],[0,2],[1,2],[1,1],[0,1],[1,2],[0,1],[0,0],[0,1],[1,2],[1,1],[0,1],[1,1],[0,0],[1,1],[0,1],[0,0],[0,1],[0,2],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[5,2,2,4,5,1,6,6,0,3,7,6,7,1,2,3,1,5,1,6,6,0,0,4,7,3,0,6,2,2,4,2,5,5,3,4,6,4,2,3,3]
+
+Cromossomo 6:
+          
+Caminho: [[0,1],[0,2],[1,2],[1,1],[0,1],[1,2],[0,1],[0,0],[0,1],[1,2],[1,1],[0,1],[1,1],[0,0],[1,1],[0,1],[0,0],[0,1],[0,2],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[2,2,4,5,1,6,6,0,3,7,6,7,1,2,3,1,5,1,6,6,0,0,4,7,3,0,6,2,2,4,2,5,5,3,4,6,4,2,3,3,5]
+
+Cromossomo 7:
+          
+Caminho: [[1,1],[0,2],[0,1],[1,2],[1,1],[1,2],[1,1],[0,2],[0,1],[1,1],[1,2],[0,1],[1,2],[2,2],[3,3],[2,2],[3,3],[4,4],[5,4],[4,4],[3,3],[4,2],[3,3],[2,2],[3,1],[4,2]]
+Genes:[3,1,6,1,3,6,2,6,1,6,4,2,7,3,4,3,1,6,7,3,3,6,3,3,5,4,3,3,0,6,3,1,5,7,5,1,6,7,5,3,2]
+
+Cromossomo 8:
+          
+Caminho: [[1,1],[2,2],[3,3],[4,4],[5,4],[4,4],[3,3],[4,2],[3,3],[2,2],[3,1],[4,2],[3,3],[4,4],[4,5],[4,4],[5,4],[4,5],[4,4]]
+Genes:[7,3,3,6,3,3,5,4,3,3,0,6,3,1,5,7,5,1,6,7,5,3,2,3,1,6,1,3,6,2,6,1,6,4,2,7,3,4,3,1,6]
+
+Cromossomo 9:
+          
+Caminho: [[0,1],[0,0],[1,1],[0,2],[0,1],[0,0],[0,1],[0,0],[1,1],[2,2],[3,3],[4,4],[5,4],[4,4]]
+Genes:[5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0,7,3,3,6,3,3,5,4,3,3,0,6,3,1,5]
+
+Cromossomo 10:
+          
+Caminho: [[1,1],[2,2],[3,3],[4,4],[5,4],[4,4],[4,5],[4,4],[3,3],[4,4],[3,3],[2,2],[1,3],[2,2],[1,2]]
+Genes:[7,3,3,6,3,3,5,4,3,3,0,6,3,1,5,5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0]
+
+---- Realizando Elitismo ----
+
+Cromossomo Vencedor: -5160
+
+----- Realizando Crossover ------
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9510
+Segundo Cromossomo Randômico: -9920
+
+Vencedor: -9510
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9390
+Segundo Cromossomo Randômico: -13540
+
+Vencedor: -9390
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9920
+Segundo Cromossomo Randômico: -11950
+
+Vencedor: -9920
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -13540
+Segundo Cromossomo Randômico: -5160
+
+Vencedor: -13540
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9390
+Segundo Cromossomo Randômico: -9940
+
+Vencedor: -9390
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9920
+Segundo Cromossomo Randômico: -10770
+
+Vencedor: -9920
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -10040
+Segundo Cromossomo Randômico: -9510
+
+Vencedor: -10040
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -11950
+Segundo Cromossomo Randômico: -9390
+
+Vencedor: -11950
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9920
+Segundo Cromossomo Randômico: -5160
+
+Vencedor: -9920
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9510
+Segundo Cromossomo Randômico: -9390
+
+Vencedor: -9510
+
+Crossover realizado com sucesso
+
+---- Realizando mutação ----- 
+
+Mutação concluída
+
+----- Calculando aptidão -----
+
+Cromossomo 0:
+Qualidade Heurística: -8920
+
+Cromossomo 1:
+Qualidade Heurística: -7920
+
+Cromossomo 2:
+Qualidade Heurística: -6240
+
+Cromossomo 3:
+Qualidade Heurística: -9780
+
+Cromossomo 4:
+Qualidade Heurística: -9050
+
+Cromossomo 5:
+Qualidade Heurística: -5640
+
+Cromossomo 6:
+Qualidade Heurística: -8940
+
+Cromossomo 7:
+Qualidade Heurística: -16290
+
+Cromossomo 8:
+Qualidade Heurística: -8330
+
+Cromossomo 9:
+Qualidade Heurística: -14390
+
+Cromossomo 10:
+Qualidade Heurística: -9070
+
+-----Geração 2-----
+
+Cromossomo 0:
+          
+Caminho: [[0,1],[0,0],[1,1],[2,2],[3,3],[2,2],[1,2],[1,3],[0,4],[0,5],[1,6],[0,7],[1,8],[2,8],[3,8],[2,8],[3,8],[4,8],[3,8],[2,8],[3,8],[4,8],[5,7],[5,6],[6,6],[5,7],[5,6],[5,7],[5,6],[4,6],[4,5],[5,6],[6,6],[5,7],[5,8],[5,7],[5,8],[5,7],[4,8],[3,8],[4,8],[5,7],[6,6],[7,6]]
+Genes:[1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7,6,0,1,2,1,3,0,2,1,3,4,1,3,5,4,5,6,4,3,5]
+
+Cromossomo 1:
+          
+Caminho: [[1,1],[0,1],[0,0],[0,1],[0,2],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2],[4,2],[3,3],[2,2],[1,3]]
+Genes:[5,1,6,6,0,0,4,7,3,0,6,2,2,4,2,5,5,3,4,6,4,2,3,3,5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2]
+
+Cromossomo 2:
+          
+Caminho: [[0,1],[0,0],[1,1],[0,2],[0,1],[0,0],[0,1],[0,0],[1,1],[0,1],[0,0],[0,1],[0,2],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,5,1,6,6,0,0,4,7,3,0,6,2,2,4,2,5,5,3,4,6,4,2,3,3]
+
+Cromossomo 3:
+          
+Caminho: [[1,1],[0,2],[0,1],[0,2],[0,1],[0,0],[1,1],[2,2],[3,3],[2,2],[1,2],[1,3],[0,4],[0,5],[1,6],[0,7],[1,8],[2,8]]
+Genes:[4,1,6,7,3,1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7,6,0,1,2,1,3,0,2,1,3,4,1,3,5,4]
+
+Cromossomo 4:
+          
+Caminho: [[0,1],[0,0],[1,1],[2,2],[3,3],[2,2],[1,2],[1,3],[0,4],[0,5],[1,6],[0,7],[1,8],[2,8],[3,8]]
+Genes:[1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7,6,0,1,2,1,3,0,2,1,3,4,1,3,5,4,4,1,6,7,3]
+
+Cromossomo 5:
+          
+Caminho: [[1,1],[2,2],[3,1],[4,2],[3,3],[4,2],[5,2],[4,2],[3,3],[4,4],[4,5],[4,6],[5,7],[4,8],[5,7],[4,8],[5,7],[5,6],[4,5],[5,6],[5,7],[5,8],[5,7],[5,8]]
+Genes:[3,3,5,4,3,3,0,6,3,1,5,4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5]
+
+Cromossomo 6:
+          
+Caminho: [[0,1],[1,2],[1,3],[2,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2],[4,2],[3,3],[4,2]]
+Genes:[4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,3,3,5,4,3,3,0,6,3,1,5]
+
+Cromossomo 7:
+          
+Caminho: [[0,1],[1,1],[1,2],[2,2],[3,3],[4,4],[4,5],[4,4],[3,3],[4,4],[3,3],[2,2],[1,3],[2,2],[1,2],[0,1],[1,2]]
+Genes:[2,4,2,5,5,3,4,6,4,2,3,3,5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0,7,3,3]
+
+Cromossomo 8:
+          
+Caminho: [[0,1],[0,0],[1,1],[0,2],[0,1],[0,0],[0,1],[0,0],[1,1],[2,2],[3,1],[4,0],[5,0],[6,0]]
+Genes:[5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0,7,3,3,2,4,2,5,5,3,4,6,4,2,3,3]
+
+Cromossomo 9:
+          
+Caminho: [[1,1],[0,1],[0,2],[1,3],[0,4],[1,3],[2,2],[3,3],[4,2],[3,3],[2,2],[1,3],[0,4],[0,5],[0,4],[1,3]]
+Genes:[3,0,2,1,3,4,1,3,5,4,5,6,4,3,5,5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0]
+
+Cromossomo 10:
+          
+Caminho: [[0,1],[0,0],[1,1],[0,2],[0,1],[0,0],[0,1],[0,0],[1,1],[0,1],[0,2],[1,3],[0,4],[1,3],[2,2],[3,3],[4,2]]
+Genes:[5,1,2,6,7,6,1,1,4,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0,3,0,2,1,3,4,1,3,5,4,5,6,4,3,5]
+
+---- Realizando Elitismo ----
+
+Cromossomo Vencedor: -5640
+
+----- Realizando Crossover ------
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -6240
+Segundo Cromossomo Randômico: -9050
+
+Vencedor: -6240
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -8940
+Segundo Cromossomo Randômico: -16290
+
+Vencedor: -8940
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -8330
+Segundo Cromossomo Randômico: -9070
+
+Vencedor: -8330
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -8920
+Segundo Cromossomo Randômico: -14390
+
+Vencedor: -8920
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -8940
+Segundo Cromossomo Randômico: -9050
+
+Vencedor: -8940
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -5640
+Segundo Cromossomo Randômico: -9070
+
+Vencedor: -5640
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -8330
+Segundo Cromossomo Randômico: -16290
+
+Vencedor: -8330
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9780
+Segundo Cromossomo Randômico: -7920
+
+Vencedor: -9780
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9050
+Segundo Cromossomo Randômico: -5640
+
+Vencedor: -9050
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -7920
+Segundo Cromossomo Randômico: -16290
+
+Vencedor: -7920
+
+Crossover realizado com sucesso
+
+---- Realizando mutação ----- 
+
+Mutação concluída
+
+----- Calculando aptidão -----
+
+Cromossomo 0:
+Qualidade Heurística: -4430
+
+Cromossomo 1:
+Qualidade Heurística: -7850
+
+Cromossomo 2:
+Qualidade Heurística: -9900
+
+Cromossomo 3:
+Qualidade Heurística: -6710
+
+Cromossomo 4:
+Qualidade Heurística: -12260
+
+Cromossomo 5:
+Qualidade Heurística: -4910
+
+Cromossomo 6:
+Qualidade Heurística: -6160
+
+Cromossomo 7:
+Qualidade Heurística: -7390
+
+Cromossomo 8:
+Qualidade Heurística: -9160
+
+Cromossomo 9:
+Qualidade Heurística: -11690
+
+Cromossomo 10:
+Qualidade Heurística: -9980
+
+-----Geração 3-----
+
+Cromossomo 0:
+          
+Caminho: [[1,1],[2,2],[3,1],[4,2],[3,3],[4,2],[5,2],[4,2],[3,3],[4,4],[4,5],[4,6],[5,7],[4,8],[5,7],[4,8],[5,7],[5,6],[4,5],[5,6],[5,7],[5,8],[5,7],[5,8],[4,8],[5,7],[4,8],[5,7],[5,8],[5,7],[4,6],[5,7],[5,8],[5,7],[5,8]]
+Genes:[3,3,5,4,3,3,0,6,3,1,5,4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5]
+
+Cromossomo 1:
+          
+Caminho: [[0,1],[1,2],[2,2],[3,3],[4,4],[5,4],[4,4],[4,5],[5,6],[5,7],[5,8],[5,7],[4,6],[5,7],[5,8],[5,7],[5,8]]
+Genes:[2,5,5,3,4,6,4,2,3,3,4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,3]
+
+Cromossomo 2:
+          
+Caminho: [[0,1],[1,2],[1,3],[2,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,3,2,5,5,3,4,6,4,2,3,3]
+
+Cromossomo 3:
+          
+Caminho: [[1,1],[2,2],[3,1],[4,0],[5,0],[6,0],[5,0],[6,0],[7,0]]
+Genes:[7,1,5,4,0,7,3,3,2,4,2,5,5,3,4,6,4,2,3,3,1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7]
+
+Cromossomo 4:
+          
+Caminho: [[0,1],[0,0],[1,1],[2,2],[3,3],[2,2],[1,1],[0,2],[1,1],[0,1],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2]]
+Genes:[1,6,1,2,6,0,6,1,3,4,6,3,3,2,1,2,4,6,2,1,7,7,1,5,4,0,7,3,3,2,4,2,5,5,3,4,6,4,2,3,3]
+
+Cromossomo 5:
+          
+Caminho: [[0,1],[0,2],[1,3],[0,4],[1,3],[0,4],[1,3],[1,2],[0,1],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2],[4,2],[3,3],[4,2],[5,2],[4,2]]
+Genes:[2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,3,3,5,4,3,3,0,6,3,1,5,3,3,5,4,3,3,0,6]
+
+Cromossomo 6:
+          
+Caminho: [[1,1],[2,2],[3,1],[4,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[4,2],[5,2],[4,2],[3,3],[4,2]]
+Genes:[3,3,5,4,3,3,0,6,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,3,3,5,4,3,3,0,6,3,1,5]
+
+Cromossomo 7:
+          
+Caminho: [[1,1],[0,2],[0,1],[0,0],[0,1],[0,0],[1,1],[2,2],[3,1],[4,0],[5,0],[6,0],[5,0],[4,0],[5,0],[4,0]]
+Genes:[3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0,7,3,3,2,4,2,5,5,3,4,6,4,2,3,3,5,1,6,6,0,0,4,7,3,0]
+
+Cromossomo 8:
+          
+Caminho: [[1,1],[0,1],[1,2],[0,1],[0,0],[0,1],[0,0],[1,1],[2,2],[3,1],[4,0],[5,0],[6,0]]
+Genes:[5,1,6,6,0,0,4,7,3,0,3,1,7,6,6,1,2,6,1,0,4,7,1,5,4,0,7,3,3,2,4,2,5,5,3,4,6,4,2,3,3]
+
+Cromossomo 9:
+          
+Caminho: [[0,1],[1,2],[1,3],[2,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1],[4,0],[3,1],[4,2]]
+Genes:[4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5,5,1,6,6,0,0,4,7,3,0,6]
+
+Cromossomo 10:
+          
+Caminho: [[1,1],[0,1],[0,0],[0,1],[1,2],[1,3],[2,2],[3,3],[4,2],[3,3],[4,2],[3,1],[2,2],[1,2],[1,3],[1,2],[1,3],[2,2],[3,1]]
+Genes:[5,1,6,6,0,0,4,7,3,0,6,4,0,1,6,2,3,5,2,2,5,2,3,1,1,5,1,5,3,6,7,1,0,3,2,2,4,6,2,5,5]
+
+---- Realizando Elitismo ----
+
+Cromossomo Vencedor: -4430
+
+----- Realizando Crossover ------
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -7390
+Segundo Cromossomo Randômico: -4430
+
+Vencedor: -7390
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -12260
+Segundo Cromossomo Randômico: -9980
+
+Vencedor: -12260
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -4910
+Segundo Cromossomo Randômico: -9160
+
+Vencedor: -4910
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -12260
+Segundo Cromossomo Randômico: -11690
+
+Vencedor: -12260
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -4910
+Segundo Cromossomo Randômico: -6160
+
+Vencedor: -4910
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9900
+Segundo Cromossomo Randômico: -6710
+
+Vencedor: -9900
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -9160
+Segundo Cromossomo Randômico: -4430
+
+Vencedor: -9160
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -7390
+Segundo Cromossomo Randômico: -11690
+
+Vencedor: -7390
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -4910
+Segundo Cromossomo Randômico: -9900
+
+Vencedor: -4910
+
+----- Realizando Torneio ----- 
+
+Primeiro Cromossomo Randômico: -6160
+Segundo Cromossomo Randômico: -6710
+
+Vencedor: -6160
+
+Crossover realizado com sucesso
+
+---- Realizando mutação ----- 
+
+Mutação concluída
+
+----- Calculando aptidão -----
+
+Cromossomo 0:
+Qualidade Heurística: -4430
+
+Cromossomo 1:
+Qualidade Heurística: -10530
+
+Cromossomo 2:
+Qualidade Heurística: -8920
+
+Cromossomo 3:
+Qualidade Heurística: -4630
+
+Cromossomo 4:
+Qualidade Heurística: -16200
+
+Cromossomo 5:
+Qualidade Heurística: -13170
+
+Cromossomo 6:
+Qualidade Heurística: -5320
+
+Cromossomo 7:
+Qualidade Heurística: -11490
+
+Cromossomo 8:
+Qualidade Heurística: -8240
+
+Cromossomo 9:
+Qualidade Heurística: -5110
+
+Cromossomo 10:
+Qualidade Heurística: -6140
+
+Caminho encontrado!!!
+
+Cromossomo: 6
+Caminho AG: [[1,1],[2,2],[3,1],[4,0],[5,0],[6,0],[7,0],[8,1],[8,0]]
+Qualide Heurística: -5320
