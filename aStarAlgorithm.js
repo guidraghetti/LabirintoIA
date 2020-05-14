@@ -1,9 +1,9 @@
 const NodeMaze = require('./nodeMaze')
 const fs = require("fs");
 class AStarAlgorithm {
-    constructor(maze, output) {
+    constructor(maze) {
         this.maze = maze;
-        this.output = output;
+        this.output = "";
     }
 
     heuristics(start, goal) {
@@ -13,7 +13,7 @@ class AStarAlgorithm {
     a_Star(start, goal) {
 
         this.output += `\n----- Rodando A* Algorithm-----`;
-        console.log('----Rodando A* Algorithm-----\n\n')
+        console.log('\n----Rodando A* Algorithm-----\n\n')
         let startNode = new NodeMaze(null, start);
         startNode.g = 0;
         startNode.f = 0;
@@ -49,11 +49,11 @@ class AStarAlgorithm {
                     path.push(current.position);
                     current = current.parent;
                 }
-                this.output += `\n----- Melhoro caminho encontrado`;
-                this.output += `\nCaminho ${JSON.stringify(path)}\n`;
+                this.output += `\n----- Melhor caminho encontrado`;
+                this.output += `\nCaminho ${JSON.stringify(path.reverse())}\n`;
                 console.log('----Melhor caminho encontrado----\n\n');
-                console.log(`\nCaminho ${JSON.stringify(path)}\n`);
-                return
+                console.log('\nCaminho', path);
+                return this.output;
             }
             let neighbors = [];
             let positions = [

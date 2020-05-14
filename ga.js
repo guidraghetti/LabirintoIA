@@ -29,8 +29,6 @@ class Ga {
     for (let i = 0; i < this.lengthPopulation; i++) {
       listPopulation.push(new Chromosome(this.maxFreeBlocks, 7));
     }
-    this.output +=
-      "\nPopulação gerada: " + JSON.stringify(listPopulation) + "\n";
     return listPopulation;
   }
 
@@ -191,7 +189,7 @@ class Ga {
   verifySolution() {
     let foundExit = false;
     let maxLoop = 10000;
-    while (maxLoop >= 0 && this.countChangeFitness <= 50 && !foundExit) {
+    while (maxLoop >= 0 && this.countChangeFitness <= 100 && !foundExit) {
       this.calculateFitness();
       this.population.forEach((chromosome, index) => {
         if (chromosome.exit && !foundExit) {
@@ -201,13 +199,11 @@ class Ga {
           console.log("Caminho AG: ", chromosome.getPath());
           this.output +=
             "Caminho AG: " + JSON.stringify(chromosome.getPath()) + "\n";
-          console.log("Genes: ", chromosome.getChromosome());
           console.log("Qualide Heurística: ", chromosome.fitness);
           this.output += "Qualide Heurística: " + chromosome.fitness + "\n";
           foundExit = true;
-          const aStar = new AStarAlgorithm(this.matrix, this.output);
-          console.log(chromosome.getPath()[chromosome.getPath().length-1])
-         aStar.a_Star([0,0],chromosome.getPath()[chromosome.getPath().length-1] );
+          const aStar = new AStarAlgorithm(this.matrix);
+          this.output += aStar.a_Star([0,0],chromosome.getPath()[chromosome.getPath().length-1] );
         }
       });
 
