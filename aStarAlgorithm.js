@@ -7,7 +7,7 @@ class AStarAlgorithm {
     }
 
     heuristics(start, goal) {
-        return Math.max(Math.abs((start[0] - goal[0]) + (start[1] - goal[1])));
+        return Math.max(Math.abs((start[0] - goal[0])),Math.abs( (start[1] - goal[1])));
     }
 
     a_Star(start, goal) {
